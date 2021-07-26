@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>calculadoracalorias</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            body {
+                color:black;
+                background-image: 
+                url(https://images.pexels.com/photos/6550825/pexels-photo-6550825.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+                background-size: 800px 800px;
+            }
+            #seccion1
+            {
+             Font-size:20px;
+             color:red;
+            }
+            #seccion2{
+                color: red;
+            }
+        </style>
+        <script>
+            function mujer(){
+                var peso=parseFloat(document.MyForm.numero1.value);
+                var estatura=parseFloat(document.MyForm.numero2.value);
+                var edad=parseFloat(document.MyForm.numero3.value);
+                var neat=parseFloat(document.MyForm.numero4.value);
+                var basal=655+(9.6 * peso)+(1.8 * estatura)-(4.7*edad);
+                var gastocalorico=basal*neat
+                resul=document.getElementById("resultado");
+                resul.innerHTML=gastocalorico;
+            }
+            function hombre(){
+                var peso=parseFloat(document.MyForm.numero1.value);
+                var estatura=parseFloat(document.MyForm.numero2.value);
+                var edad=parseFloat(document.MyForm.numero3.value);
+                var neat=parseFloat(document.MyForm.numero4.value);
+                var basal=66+(13.7 * peso)+(5 * estatura)-(6.5*edad);
+                var gastocalorico=basal*neat
+                resul=document.getElementById("resultado");
+                resul.innerHTML=gastocalorico;
+            }
+           
+        </script>    
+    </head>
+    <body>
+        <Form name="MyForm">
+            <center>
+                 <section id="seccion1">
+                <h2>CALCULADORA DE GASTO CALORICO DIARIO</h2> <br>
+                 </section>
+                
+                <h3>Ingresar peso en Kg:</h3>
+                <input type="text" name="numero1" size="2" style="text-align:center"><br>
+                <h3>Ingresar estatura en cms:</h3>
+                <input type="text" name="numero2" size="2" style="text-align:center"><br>
+                <h3>Ingresar edad:</h3><br>
+                <input type="text" name="numero3" size="2" style="text-align:center"><br>
+                 <h3>Ingresar neat:</h3><br>
+                <input type="text" name="numero4" size="2" style="text-align:center"><br><br><br>
+                
+                <input type="button" class="btn btn-info" value="MUJER" onclick="mujer()"
+                       style="BORDER: black 1px solid; FONT-SIZE: 10pt;  
+                        BACKGROUND-COLOR: red; color: white">
+                <input type="button" class="btn btn-info" value="HOMBRE" onclick="hombre()"
+                       style="BORDER: black 1px solid; FONT-SIZE: 10pt;  
+                        BACKGROUND-COLOR: blue; color: white"><br>
+               <section id="seccion2">
+                <h3>Gasto calorico diario:</h3>
+                <h3 id="resultado" style="color:black"></h3><br>
+                </section>
+            </center>    
+        </Form>
+    </body>
+</html>
